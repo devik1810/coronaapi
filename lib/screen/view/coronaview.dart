@@ -23,7 +23,7 @@ class _CoronaScreenState extends State<CoronaScreen> {
       appBar: AppBar(
         title: Text(
           "Corona",
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.w800),
         ),
         centerTitle: true,
         backgroundColor: Colors.grey,
@@ -45,33 +45,54 @@ class _CoronaScreenState extends State<CoronaScreen> {
                         padding: const EdgeInsets.all(10),
                         child: Container(
                           width: double.infinity,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                "CountryName:${c1.countriesStat[index].countryName}",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20,
-                                    color: Colors.black),
-                              ),
-                              SizedBox(height: 10),
-                              Text(
-                                  "TotalCases:${c1.countriesStat[index].cases}",
-                                  style: TextStyle(color: Colors.black45)),
-                              SizedBox(height: 10),
-                              Text(
-                                  "ActiveCases:${c1.countriesStat[index].activeCases}",
-                                  style: TextStyle(color: Colors.black45)),
-                              SizedBox(height: 10),
+                          child: Container(
+                            height: 200,
+                            width: double.infinity,
 
-                              Text(
-                                  "TotalRecoverd:${c1.countriesStat[index].totalRecovered}",
-                                  style: TextStyle(color: Colors.black45)),
-                              SizedBox(height: 10),
-                              Text("Death:${c1.countriesStat[index].deaths}",
-                                  style: TextStyle(color: Colors.black45)),
-                            ],
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.grey.shade300,
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "${c1.countriesStat[index].countryName}",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w900,
+                                        fontSize: 20,
+                                        color: Colors.black),
+                                  ),
+                                  SizedBox(height: 20),
+                                  Text(
+                                      "TotalCases - ${c1.countriesStat[index].cases}",
+                                      style: TextStyle(color: Colors.black87)),
+                                  Text(
+                                      "ActiveCases - ${c1.countriesStat[index].activeCases}",
+                                      style: TextStyle(color: Colors.black87)),
+                                  Text(
+                                      "Death - ${c1.countriesStat[index].deaths}",
+                                      style: TextStyle(color: Colors.black87)),
+                                  Text(
+                                      "NewDeaths - ${c1.countriesStat[index].newDeaths}",
+                                      style: TextStyle(color: Colors.black87)),
+                                  Text(
+                                      "DeathsPer1MP - ${c1.countriesStat[index].deathsPer1MPopulation}",
+                                      style: TextStyle(color: Colors.black87)),
+                                  Text(
+                                      "TotalRecoverd - ${c1.countriesStat[index].totalRecovered}",
+                                      style: TextStyle(color: Colors.black87)),
+                                  Text(
+                                      "TotalTests - ${c1.countriesStat[index].totalTests}",
+                                      style: TextStyle(color: Colors.black87)),
+                                  Text(
+                                      "TotalCasesPer1MP - ${c1.countriesStat[index].totalCasesPer1MPopulation}",
+                                      style: TextStyle(color: Colors.black87)),
+                                ],
+                              ),
+                            ),
                           ),
                         ),
                       );
